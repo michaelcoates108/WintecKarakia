@@ -5,8 +5,17 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
     <fragment
+        android:id="@+id/karakiaFragment"
+        android:name="com.example.winteckarakia.KarakiaFragment"
+        android:label="item_karakia"
+        tools:layout="@layout/item_karakia" />
+    <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.winteckarakia.HomeFragment"
-        android:label="home_fragment"
-        tools:layout="@layout/home_fragment" />
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment2_to_karakiaFragment"
+            app:destination="@id/karakiaFragment" />
+    </fragment>
 </navigation>

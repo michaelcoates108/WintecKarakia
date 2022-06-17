@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
-    android:background="@color/orange">
+    android:background="@color/orange"
+    tools:context=".KarakiaFragment">
 
     <ImageView
         android:id="@+id/image_view_karakia"

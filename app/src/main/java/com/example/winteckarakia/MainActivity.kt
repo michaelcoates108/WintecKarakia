@@ -1,20 +1,21 @@
 package com.example.winteckarakia
 
-import android.content.Intent
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+
 import android.os.Handler
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import androidx.core.os.postDelayed
+
 import androidx.navigation.NavController
-import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.setupActionBarWithNavController
 
 
-public class MainActivity : AppCompatActivity() {
-
-    private lateinit var navController: NavController
+class MainActivity : AppCompatActivity(R.layout.activity_main) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -60,9 +61,17 @@ public class MainActivity : AppCompatActivity() {
             }
             R.id.action_history -> {
 
+
+        val navHostFragment = supportFragmentManager
+            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
+
+        setupActionBarWithNavController(navController)
+
                 true
             }
             R.id.action_close -> {
+
 
                 true
             }
