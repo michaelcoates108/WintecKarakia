@@ -1,4 +1,4 @@
-package com.example.winteckarakia
+package com.example.winteckarakia.data
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,12 +6,13 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.winteckarakia.R
 
 
-class KarakiaAdapter(private var dataList: List<KarakiaData>, private val listener: OnItemClickListener) : RecyclerView.Adapter<KarakiaAdapter.ViewHolder>(){
+class KarakiaMenuAdapter(private var menuDataList: List<KarakiaMenuData>, private val listener: OnItemClickListener) : RecyclerView.Adapter<KarakiaMenuAdapter.ViewHolder>(){
 
-    internal fun setDataList(dataList: List<KarakiaData>) {
-        this.dataList = dataList
+    internal fun setDataList(menuDataList: List<KarakiaMenuData>) {
+        this.menuDataList = menuDataList
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -20,12 +21,12 @@ class KarakiaAdapter(private var dataList: List<KarakiaData>, private val listen
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val data = dataList[position]
+        val data = menuDataList[position]
         holder.desc.text = data.desc
         holder.image.setImageResource(data.image)
     }
 
-    override fun getItemCount() = dataList.size
+    override fun getItemCount() = menuDataList.size
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener{
         var image: ImageView = itemView.findViewById(R.id.row_image_view)
@@ -42,6 +43,7 @@ class KarakiaAdapter(private var dataList: List<KarakiaData>, private val listen
             }
         }
     }
+
     interface OnItemClickListener {
         fun onItemClick(position: Int)
     }
