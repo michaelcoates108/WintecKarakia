@@ -5,46 +5,57 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.winteckarakia.KarakiaViewModel
 import com.example.winteckarakia.R
+import com.example.winteckarakia.databinding.RowModelBinding
 
 
-class KarakiaMenuAdapter(private var menuDataList: List<KarakiaMenuData>, private val listener: OnItemClickListener) : RecyclerView.Adapter<KarakiaMenuAdapter.ViewHolder>(){
+class KarakiaMenuAdapter(
+    val menuViewModel: List<KarakiaViewModel>,
+    private val listener: OnItemClickListener
+) : RecyclerView.Adapter<KarakiaMenuAdapter.ViewHolder>() {
 
-    internal fun setDataList(menuDataList: List<KarakiaMenuData>) {
-        this.menuDataList = menuDataList
-    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.row_model,parent,false)
-        return ViewHolder(view)
+        val binding: RowModelBinding = DataBindingUtil.inflate(
+            LayoutInflater.from(parent.context),
+            R.layout.row_model,
+            parent,
+            false
+        )
+        return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val data = menuDataList[position]
-        holder.desc.text = data.desc
-        holder.image.setImageResource(data.image)
+        holder.bind(menuViewModel[position])
+
     }
 
-    override fun getItemCount() = menuDataList.size
+    override fun getItemCount() = menuViewModel.size
 
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView), View.OnClickListener{
-        var image: ImageView = itemView.findViewById(R.id.row_image_view)
-        var desc: TextView = itemView.findViewById(R.id.row_text_view)
+    inner class ViewHolder(private var binding: RowModelBinding) : RecyclerView.ViewHolder(binding.root),
+        View.OnClickListener {
+        fun bind(newBinding: KarakiaViewModel){
+            binding.data = newBinding
 
-        init {
             itemView.setOnClickListener(this)
+
         }
 
+
         override fun onClick(v: View?) {
-            val position:Int = adapterPosition
+            val position = adapterPosition
             if (position != RecyclerView.NO_POSITION) {
-                listener.onItemClick(position)
+                if (position != null) {
+                    listener.onItemClick(binding.data!!)
+                }
             }
         }
     }
 
     interface OnItemClickListener {
-        fun onItemClick(position: Int)
+        fun onItemClick(data: KarakiaViewModel)
     }
 }
