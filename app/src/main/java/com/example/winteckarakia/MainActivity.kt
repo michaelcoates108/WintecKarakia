@@ -1,6 +1,4 @@
 package com.example.winteckarakia
-
-
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
@@ -12,13 +10,14 @@ import androidx.core.os.postDelayed
 
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.fragment.findNavController
 
 
-class MainActivity : AppCompatActivity(R.layout.activity_main) {
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
     }
@@ -62,20 +61,15 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             R.id.action_history -> {
 
 
-        val navHostFragment = supportFragmentManager
-            .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
-        val navController = navHostFragment.navController
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment_main) as NavHostFragment
+        navController = navHostFragment.findNavController()
 
-        setupActionBarWithNavController(navController)
-
-                true
-            }
-            R.id.action_close -> {
-
-
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        return navController.navigateUp() || super.onSupportNavigateUp()
+
+    }
+
 }
