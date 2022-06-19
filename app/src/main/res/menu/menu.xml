@@ -13,7 +13,39 @@
         android:id="@+id/dropdown_menu"
         android:icon="@drawable/ic_menu"
         android:title="Menu"
-        app:showAsAction="always"/>
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/action_translate"
+                android:title="Translate" />
+            <item
+                android:id="@+id/action_opening_one"
+                android:title="Opening One" />
+            <item
+                android:id="@+id/action_opening_two"
+                android:title="Opening Two" />
+            <item
+                android:id="@+id/action_blessing"
+                android:title="Blessing for food" />
+            <item
+                android:id="@+id/action_closing_one"
+                android:title="Closing One" />
+            <item
+                android:id="@+id/action_closing_two"
+                android:title="Closing Two" />
+            <item
+                android:id="@+id/action_history"
+                android:title="History" />
+            <item
+                android:id="@+id/action_about_us"
+                android:title="Translate" />
+            <item
+                android:id="@+id/action_close"
+                android:title="Close Menu" />
+
+
+        </menu>
+    </item>
 
 
 
