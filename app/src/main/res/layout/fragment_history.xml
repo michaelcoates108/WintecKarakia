@@ -2,7 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="ui.HistoryFragment"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    >
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -10,19 +14,29 @@
         android:gravity="center"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:text="TextView" />
+        <ImageView
+            android:id="@+id/history_image"
+            android:src="@drawable/karakia6"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginTop="8dp"
+            android:scaleType="fitXY"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteX="8dp" />
+
 
         <TextView
-            android:id="@+id/textView3"
+            android:id="@+id/textView2"
+            android:padding="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="0.5"
-            android:text="TextView" />
+            android:textAlignment="center"
+            android:text="Karakia are chants or invocations, used to ensure favorable outcomes to important events. They can be spoken as a farewell to the deceased, welcoming people into a shared space, or in blessing over a meal. There are many more situations that a Karakia could be used. Karakia are ritual chants which invoke spiritual guidance and protection. \n\n
+   It would be easy to mistake Karakia for prayers, but though they share some likeness with prayers, they were widely used by Māori people long before Christianity was brought to New Zealand. Before this time, the Māori people held their own gods in high regard and communicated with them through Karakia at the appropriate times. Tohunga (or priests) were the most common people to conduct Karakia because they held great Mana, and this gave them power to speak with the Gods.
+                \n\nThe Karakia presented in our application have been selected by Wintec to help our Tutors and Students give welcome, bless food, or to conclude a meeting." />
+
+
 
     </LinearLayout>
 
