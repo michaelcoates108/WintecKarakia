@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">Wintec Karakia</string>
+    <string name="app_name"><font fgcolor='#060D0D'>Wintec Karakia</font></string>
+
 </resources>

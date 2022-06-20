@@ -49,6 +49,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), KarakiaMenuAdapter.OnItem
                             resourceID,
                             getFilePath(resourceIDVideo),
                             it.englishWords,
+                            it.maoriWords,
                             ""
                         )
                     )

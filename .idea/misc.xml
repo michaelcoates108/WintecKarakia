@@ -13,10 +13,23 @@
         <entry key="..\:/Users/micha/AndroidStudioProjects/WintecKarakia/app/src/main/res/layout/item_display.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/WintecKarakia/app/src/main/res/layout/item_karakia.xml" value="0.33" />
         <entry key="..\:/Users/micha/AndroidStudioProjects/WintecKarakia/app/src/main/res/menu/menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/WintecKarakia/app/src/main/res/drawable-v24/gradient.xml" value="0.209" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/WintecKarakia/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.209" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/WintecKarakia/app/src/main/res/drawable-v24/ic_search.xml" value="0.209" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/WintecKarakia/app/src/main/res/drawable/ic_launcher_background.xml" value="0.209" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/WintecKarakia/app/src/main/res/drawable/ic_menu.xml" value="0.209" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/WintecKarakia/app/src/main/res/layout/activity_main.xml" value="0.14402173913043478" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/WintecKarakia/app/src/main/res/layout/activity_splash.xml" value="0.2015625" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/WintecKarakia/app/src/main/res/layout/fragment_history.xml" value="0.2015625" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/WintecKarakia/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/WintecKarakia/app/src/main/res/layout/fragment_karakia.xml" value="0.2015625" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/WintecKarakia/app/src/main/res/layout/row_model.xml" value="0.2015625" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/WintecKarakia/app/src/main/res/menu/menu.xml" value="0.2015625" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/WintecKarakia/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.209" />
+        <entry key="..\:/Users/pc/AndroidStudioProjects/WintecKarakia/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.209" />
         <entry key="..\:/WintecKarakia/app/src/main/res/drawable/ic_launcher_background.xml" value="0.2695" />
         <entry key="..\:/WintecKarakia/app/src/main/res/drawable/ic_menu.xml" value="0.2695" />
         <entry key="..\:/WintecKarakia/app/src/main/res/drawable/karakia_timatanga_tahi.xml" value="0.2695" />
-
         <entry key="..\:/WintecKarakia/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/WintecKarakia/app/src/main/res/layout/activity_splash.xml" value="0.35208333333333336" />
         <entry key="..\:/WintecKarakia/app/src/main/res/layout/card_layout.xml" value="0.35208333333333336" />
@@ -34,7 +47,6 @@
         <entry key="..\:/WintecKarakia/app/src/main/res/layout/splash_fragment.xml" value="0.36614583333333334" />
         <entry key="..\:/WintecKarakia/app/src/main/res/layout/test_layout.xml" value="0.36614583333333334" />
         <entry key="..\:/WintecKarakia/app/src/main/res/menu/menu.xml" value="0.33" />
-
       </map>
     </option>
   </component>

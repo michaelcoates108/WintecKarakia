@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="8dp"
-        android:background="@color/orange">
+        android:background="@color/white">
 
 
         <ImageView
@@ -44,11 +44,26 @@
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:padding="32dp"
-            android:text="@{karakia.karakiatext}"
+            android:text="@{karakia.karakiaenglishtext}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/video_view"
             app:layout_constraintVertical_bias="0.119"
             tools:layout_editor_absoluteX="8dp" />
+
+        <TextView
+            android:id="@+id/text_english"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{karakia.karakiaenglishtext}"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/text_maori"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{karakia.karakiaengmaoritext}"
+            android:visibility="gone" />
+
 
         <Button
             android:id="@+id/translate_button_english"

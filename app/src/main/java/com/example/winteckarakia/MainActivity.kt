@@ -9,8 +9,10 @@ import android.view.MenuItem
 import androidx.core.os.postDelayed
 
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
+import com.example.winteckarakia.ui.HomeFragmentDirections
 
 
 class MainActivity : AppCompatActivity() {
@@ -20,6 +22,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.nav_host_fragment_main) as NavHostFragment
+        navController = navHostFragment.findNavController()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -29,13 +36,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when(item.itemId){
+        return when(item.itemId) {
             R.id.action_translate -> {
 
                 true
             }
-            R.id.action_opening_one ->{
-
+            R.id.action_opening_one -> {
                 true
             }
             R.id.action_opening_two -> {
@@ -59,11 +65,13 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             R.id.action_history -> {
+                true
+            }
 
-
-        val navHostFragment =
-            supportFragmentManager.findFragmentById(R.id.nav_host_fragment_main) as NavHostFragment
-        navController = navHostFragment.findNavController()
+            else -> {
+                false
+            }
+        }
 
     }
 
