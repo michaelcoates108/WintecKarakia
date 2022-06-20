@@ -6,4 +6,9 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/black</item>
     </style>
+
+    <style name="Karakia" parent="@style/Widget.AppCompat.Toolbar">
+        <!-- Customize your theme here. -->
+        <item name="android:titleTextColor">@color/black</item>
+    </style>
 </resources>

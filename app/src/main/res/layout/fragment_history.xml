@@ -30,6 +30,7 @@
             android:padding="16dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
             android:layout_weight="0.5"
             android:textAlignment="center"
             android:text="Karakia are chants or invocations, used to ensure favorable outcomes to important events. They can be spoken as a farewell to the deceased, welcoming people into a shared space, or in blessing over a meal. There are many more situations that a Karakia could be used. Karakia are ritual chants which invoke spiritual guidance and protection. \n\n

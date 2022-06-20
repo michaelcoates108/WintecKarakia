@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.winteckarakia.ui.HomeFragment"
-        android:label="fragment_home"
+        android:label="Wintec Karakia"
         tools:layout="@layout/fragment_home" >
         <action
             android:id="@+id/action_homeFragment_to_karakiaFragment"
@@ -19,16 +19,19 @@
     <fragment
         android:id="@+id/karakiaFragment"
         android:name="com.example.winteckarakia.ui.KarakiaFragment"
-        android:label="fragment_karakia"
+        android:label="{karakia_title}"
         tools:layout="@layout/fragment_karakia" >
         <argument
             android:name="details"
             app:argType="com.example.winteckarakia.data.KarakiaDetails" />
+        <argument
+            android:name="karakia_title"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/historyFragment"
         android:name="com.example.winteckarakia.ui.HistoryFragment"
-        android:label="HistoryFragment" >
+        android:label="History" >
         <argument
             android:name="details"
             app:argType="com.example.winteckarakia.data.KarakiaDetails" />

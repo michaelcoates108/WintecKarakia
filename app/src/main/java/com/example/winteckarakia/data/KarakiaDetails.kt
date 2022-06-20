@@ -7,7 +7,10 @@ import kotlinx.parcelize.Parcelize
 data class KarakiaDetails(
     var karakiaimage: Int,
     var karakiavideo: String,
+    var karakia: String,
     var karakiaenglishtext: String,
     var karakiaengmaoritext: String,
     var historytext: String
-) : Parcelable
+) : Parcelable {
+    var textlang = karakiaenglishtext
+}

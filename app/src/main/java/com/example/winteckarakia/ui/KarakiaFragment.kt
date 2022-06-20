@@ -1,21 +1,22 @@
 package com.example.winteckarakia.ui
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.TextView
-import android.widget.VideoView
+import android.widget.*
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
+import com.example.winteckarakia.MainActivity
 import com.example.winteckarakia.R
 import com.example.winteckarakia.databinding.FragmentKarakiaBinding
 
-class KarakiaFragment: Fragment(R.layout.fragment_karakia) {
+class KarakiaFragment : Fragment(R.layout.fragment_karakia) {
     private val args by navArgs<KarakiaFragmentArgs>()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
 
         return inflater.inflate(R.layout.fragment_karakia, container, false)
@@ -24,27 +25,36 @@ class KarakiaFragment: Fragment(R.layout.fragment_karakia) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val binding = FragmentKarakiaBinding.bind(view)
-        val getVideoView = view.findViewById<VideoView>(R.id.video_view)
 
-        val btn_click_english= view.findViewById(R.id.translate_button_english) as Button
-        val btn_click_maori = view.findViewById(R.id.translate_button_maori) as Button
-        val TextView = view.findViewById(R.id.text_view_karakia) as TextView
-        val TextEnglish = view.findViewById(R.id.text_english) as TextView
-        val TextMaori = view.findViewById(R.id.text_maori) as TextView
-        btn_click_english.setOnClickListener {
-            TextView.text = TextEnglish.text
+        (requireActivity() as MainActivity).title = binding.karakia?.karakia
+
+        var media_controller = MediaController(requireContext())
+
+        binding.translateButtonEnglish.setOnClickListener {
+            binding.textViewKarakia.text = binding.karakia!!.karakiaenglishtext
         }
-        btn_click_maori.setOnClickListener {
-            TextView.text = TextMaori.text
+        binding.translateButtonMaori.setOnClickListener {
+            binding.textViewKarakia.text = binding.karakia!!.karakiaengmaoritext
+        }
+
+        media_controller.setAnchorView(binding.videoView)
+        binding.videoView.setMediaController(media_controller)
+
+        binding.karakiaVideoButton.setOnClickListener {
+            binding.videoView.start()
+            binding.karakiaVideoButton.visibility = View.GONE
         }
 
 
         binding.apply {
             karakia = args.details
-            getVideoView.setVideoPath(args.details.karakiavideo)
-
+            videoView.setVideoPath(args.details.karakiavideo)
         }
-        getVideoView.start()
+
+        binding.videoView.setOnCompletionListener {
+            binding.karakiaVideoButton.visibility = View.VISIBLE
+        }
+
     }
 
 }

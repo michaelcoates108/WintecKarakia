@@ -48,6 +48,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), KarakiaMenuAdapter.OnItem
                         KarakiaDetails(
                             resourceID,
                             getFilePath(resourceIDVideo),
+                            it.karakia,
                             it.englishWords,
                             it.maoriWords,
                             ""
@@ -106,7 +107,7 @@ class HomeFragment : Fragment(R.layout.fragment_home), KarakiaMenuAdapter.OnItem
             findNavController().navigate(action)
         } else {
             val action =
-                HomeFragmentDirections.actionHomeFragmentToKarakiaFragment(data.karadetails)
+                HomeFragmentDirections.actionHomeFragmentToKarakiaFragment(data.karadetails, data.karadetails.karakia)
             findNavController().navigate(action)
         }
 
